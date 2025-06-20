@@ -1,11 +1,19 @@
-import styles from './page.module.css'
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Button from 'react-bootstrap/Button';
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <h1>Main Page - app/page.js</h1>
-      </div>
-    </main>
+    <>
+      <Container>
+        <Row>
+          <Col className='text-center'>
+            <h1>All Contacts</h1>
+            <Button>ADD CONTACT</Button>
+          </Col>
+        </Row>
+      </Container>
+    </>
   )
 }
