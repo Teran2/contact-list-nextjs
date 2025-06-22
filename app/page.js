@@ -1,8 +1,8 @@
 import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import { SearchBar } from './components/searchBar';
+import Contact from './contacts/page'
 
 export default function Home() {
   return (
@@ -14,7 +14,11 @@ export default function Home() {
           </Col>
         <Container fluid='md'>
           <SearchBar/>
+          <Contact />
         </Container>
+        {/* <Container fluid='md'>
+          <Contact/>
+        </Container> */}
       </Container>
     </>
   )

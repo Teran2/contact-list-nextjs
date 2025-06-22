@@ -3,21 +3,37 @@
   margin: 10px 0;
 }
 
+/* Browsers have default styling, this removes it for the h1 */
 .no-margin-h1 {
   margin-bottom: 0;
 }
 
 .add-contact {
+  border-radius: 7px;
   margin: 12.5px 0;
 }
 
-.search-bar {
+div {
   text-align: center;
+}
+
+.contacts-list {
+  background-color: #f5f5f5;
+  /* margin: 0 1%; */ /* Need to find a better way to align w/contacts-list */
 }
 
 .search-bar input {
   border: 1px solid black;
   border-radius: 7px;
   height: 35px;
-  width: 75%;
+  padding-left: 10px;
+  margin-bottom: 20px;
+  width: 98%; /* Need to find a better way to align w/contacts-list */
+}
+
+img {
+  border-radius: 50%;
+  height: 50px;
+  padding: 5px;
+  width: 50px;
 }
