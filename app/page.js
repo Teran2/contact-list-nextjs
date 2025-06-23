@@ -4,6 +4,7 @@ import Button from 'react-bootstrap/Button';
 import { SearchBar } from './components/searchBar';
 import Contact from './contacts/page'
 import AddNewContact from './components/addNewContact';
+import ContactInfoCard from './components/ContactInfo';
 
 export default function Home() {
   return (
@@ -20,7 +21,12 @@ export default function Home() {
         {/* <Container fluid='md'>
           <Contact/>
         </Container> */}
+      </Container>
+      <Container>
         <AddNewContact/> {/* Just using to see component */}
+      </Container>
+      <Container>
+        <ContactInfoCard/>
       </Container>
     </>
   )

@@ -10,5 +10,8 @@ export const ContactAPI = {
   addContact: function({ name, image, email, phoneNumber }) {
     this.contacts.push({ name, image, email, phoneNumber })
   },
-  get: function(id) {}
+  get: function(id) {
+    const isContact = (contact) => contact.id === id;
+    return this.contacts.find(isContact);
+  }
 }

@@ -21,7 +21,7 @@ export default function ContactInfo() {
     <main>
       <div>
         <h1>Test</h1>
-        <Link href='/contacts'>Home</Link>
+        <Link href='/'>Home</Link>
       </div>
     </main>
   );
