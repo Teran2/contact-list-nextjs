@@ -4,6 +4,7 @@ import { ContactAPI } from "../data/contactsAPI";
 import Link from "next/link";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+// import AddNewContact from "../components/addNewContact";
 
 export default function Contact() {
   const [allContacts, _] = useState(ContactAPI.all());
