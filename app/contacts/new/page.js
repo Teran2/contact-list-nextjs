@@ -1,12 +1,10 @@
-// ADD_CONTACT button, onClick handler
-// Re-route to a submission form page
-// ADD_NEW_CONTACT button, onClick handler
-//Re-route to newly added Contact Info page
+// Routes submisison form for adding a new contact.
 
 "use client";
+import { ContactAPI } from "@/app/data/contactsAPI";
 import { useRouter } from "next/navigation";
+import { useParams } from "next/navigation";
 import { useState } from "react";
-import { ContactAPI } from "../data/contactsAPI";
 import Button from "react-bootstrap/Button";
 
 export default function AddNewContact() {
@@ -24,7 +22,7 @@ export default function AddNewContact() {
       image_URL,
       phoneNumber
     });
-    router.push("/page")
+    router.push("/contacts/page")
   }
 
   return (

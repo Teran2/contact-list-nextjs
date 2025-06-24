@@ -1,10 +1,8 @@
 import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
+import Link from 'next/link';
 import { SearchBar } from './components/searchBar';
-import Contact from './contacts/page'
-import AddNewContact from './components/addNewContact';
-import ContactInfoCard from './components/ContactInfo';
 
 export default function Home() {
   return (
@@ -12,22 +10,28 @@ export default function Home() {
       <Container>
           <Col className='page-header'>
             <h1 className='no-margin-h1'>All Contacts</h1>
-            <Button className='add-contact'>ADD CONTACT</Button>
+            <Link href="/contacts/new/page">
+              <Button className='add-contact'>ADD CONTACT</Button>
+            </Link>
+            {/* onClick ROUTE to form - contacts/new/page */}
           </Col>
+        </Container>
+
         <Container fluid='md'>
           <SearchBar/>
-          <Contact />
         </Container>
-        {/* <Container fluid='md'>
-          <Contact/>
-        </Container> */}
-      </Container>
-      <Container>
-        <AddNewContact/> {/* Just using to see component */}
-      </Container>
-      <Container>
-        <ContactInfoCard/>
-      </Container>
+
+        <Container>
+          {/* RENDER ContactList */}
+        </Container>
+
+        <Container>
+          {/* ROUTE to form - AddNewContact */}
+        </Container>
+
+        <Container>
+          {/* ROUTE to page - ContactInfo */}
+        </Container>
     </>
   )
 }
