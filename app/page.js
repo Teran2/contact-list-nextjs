@@ -10,18 +10,19 @@ export default function Home() {
       <Container>
           <Col className='page-header'>
             <h1 className='no-margin-h1'>All Contacts</h1>
-            <Link href="/contacts/new/page">
+            <Link href="/contacts/new">
               <Button className='add-contact'>ADD CONTACT</Button>
             </Link>
             {/* onClick ROUTE to form - contacts/new/page */}
           </Col>
         </Container>
 
-        <Container fluid='md'>
+        <Container>
           <SearchBar/>
         </Container>
 
         <Container>
+          <Link href="/contacts">All Contacts</Link>
           {/* RENDER ContactList */}
         </Container>
 

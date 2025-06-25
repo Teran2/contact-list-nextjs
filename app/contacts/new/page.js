@@ -1,32 +1,37 @@
-// Routes submisison form for adding a new contact.
-
 "use client";
 import { ContactAPI } from "@/app/data/contactsAPI";
 import { useRouter } from "next/navigation";
-import { useParams } from "next/navigation";
 import { useState } from "react";
 import Button from "react-bootstrap/Button";
+import Container from "react-bootstrap/Container";
 
 export default function AddNewContact() {
   const [name, setName] = useState(null);
   const [email, setEmail] = useState(null);
-  const [image_URL, setImage_URL] = useState(null);
+  const [image, setImage] = useState(null);
   const [phoneNumber, setPhoneNumber] = useState(null);
 
   const router = useRouter();
 
+  const generateUniqueId = () => {
+    return Math.round(Math.random() * 100000000);
+  }
+
   const handleSubmitContact = () => {
+    const uniqueId = generateUniqueId();
+
     ContactAPI.addContact({
       name,
       email,
-      image_URL,
-      phoneNumber
+      image,
+      phoneNumber,
+      uniqueId
     });
-    router.push("/contacts/page")
+    router.push("/contacts")
   }
 
   return (
-    <div>
+    <Container>
       <form>
         <label>Enter Name</label>
         <input
@@ -55,7 +60,7 @@ export default function AddNewContact() {
         type="text"
         className="form-control"
         onChange={(event) =>
-          setImage_URL(event.target.value)
+          setImage(event.target.value)
         }
         />
 
@@ -76,6 +81,6 @@ export default function AddNewContact() {
           ADD NEW CONTACT
         </Button>
       </form>
-    </div>
+    </Container>
   );
 }
