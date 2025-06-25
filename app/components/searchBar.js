@@ -1,9 +1,10 @@
 'use client';
-import React from 'react';
 import { useState } from 'react';
 
 export const SearchBar = ({ onSearchTermChange }) => {
   const [term, setTerm] = useState('');
+
+  console.log(term);
 
   return (
     <div className='search-bar'>
