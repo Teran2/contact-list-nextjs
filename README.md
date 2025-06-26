@@ -1,6 +1,12 @@
 ## Contact List
 
-This project has been created by a student at Parsity, an online software engineering course. The work in this repository is wholly of the student based on a sample starter project that can be accessed by looking at the repository that this project forks.
+To get started:
 
-If you have any questions about this project or the program in general, visit [parsity.io](https://parsity.io/) or email hello@parsity.io.
+- Clone the Repo
+- Open on vscode
+- Open terminal within vscode
+- Type and enter ' npm i '
 
+Troubleshooting vscode terminal:
+
+- If your on windows and can't use the terminal within vscode, go to Settings/System/For Developers, on the PowerShell dropdown menu you can enable ' Change execution policy to allow local Powershell scripts to run wihtout signing. '
