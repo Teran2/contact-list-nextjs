@@ -1,8 +1,8 @@
 'use client';
-import Link from "next/link";
-import { useParams } from "next/navigation";
 import { ContactAPI } from "@/app/data/contactsAPI";
 import Container from "react-bootstrap/Container";
+import Link from "next/link";
+import { useParams } from "next/navigation";
 
 export default function ContactInfo() {
   const { id } = useParams();
@@ -24,11 +24,11 @@ export default function ContactInfo() {
         <div>
           <Link href="/contacts">Back</Link>
           </div>
-        <h1>
+        <h2>
           {contact.name}
-        </h1>
+        </h2>
         <div className="contact-info">
-          <img src={contact.image} />
+          <img src={contact.image} alt="`${contact.name}'s profile picture.`" />
         </div>
           <div>
           {contact.email}

@@ -1,10 +1,10 @@
 'use client';
-import { useState } from "react";
-import { ContactAPI } from "../data/contactsAPI";
-import Link from "next/link";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import { ContactAPI } from "../data/contactsAPI";
+import Container from "react-bootstrap/Container";
+import Link from "next/link";
+import Row from "react-bootstrap/Row";
+import { useState } from "react";
 
 export default function Contact() {
   const [allContacts, _] = useState(ContactAPI.all());
@@ -20,7 +20,7 @@ export default function Contact() {
        {allContacts.map((c) => (
           <Row className="contacts-list" key={c.uniqueId}>
          <Col>
-           <img src={c.image} />
+           <img src={c.image}/>
          </Col>
           <Col>
           <Link href={`/contacts/${c.uniqueId}`}>
@@ -29,8 +29,6 @@ export default function Contact() {
          </Col>
           <Col>{c.email}</Col>
           <Col>{c.phoneNumber}</Col>
-         {/* <Col>{ contact.edit }</Col> */}
-         {/* Add editing feature */}
        </Row>
        ))}
        <Link href="/">Home</Link>
