@@ -1,8 +1,9 @@
 'use client';
 import { useState } from 'react';
+import PropTypes from "prop-types";
 
 export const SearchBar = ({ onSearchTermChange }) => {
-  const [term, setTerm] = useState('');
+  const [term, setTerm] = useState(null);
 
   return (
     <div className='search-bar'>
@@ -16,4 +17,8 @@ export const SearchBar = ({ onSearchTermChange }) => {
       />
     </div>
   );
+}
+
+SearchBar.propTypes = {
+  onSearchTermChange: PropTypes.func.isRequired,
 }

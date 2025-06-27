@@ -1,6 +1,7 @@
 "use client";
 import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
+import Contact from './contacts/page';
 import { ContactAPI } from './data/contactsAPI';
 import Container from 'react-bootstrap/Container';
 import Link from 'next/link';
@@ -14,9 +15,13 @@ export default function Home() {
   const contactSearch = (term) => {
     const result = ContactAPI.all().filter(contact =>
       contact.name.toLowerCase().includes(term.toLowerCase())
-    ); // Fetches all data, converts name prop and term to lower case, checks if inclusive.
+    );
 
     setSearchResult(result.length > 0 ? result[0] : null);
+
+    if (term === '') {
+      setSearchResult(null);
+    }
   }
 
   return (
@@ -36,29 +41,31 @@ export default function Home() {
 
         <Container>
         <Row>
-         <Col>Profile Pic</Col>
-         <Col>Name</Col>
-         <Col>Email</Col>
-         <Col>Phone</Col>
+         <Col className='sm'>Profile Pic</Col>
+         <Col className='sm'>Name</Col>
+         <Col className='sm'>Email</Col>
+         <Col className='sm'>Phone</Col>
+         <Col className='sm'></Col>
        </Row>
-          {searchResult && ( // The && is used for conditional rendering, if it's truthy you get result, if not it's just null (Line 19).
+          {searchResult && (
         <Row className='contacts-list' key={searchResult.uniqueId}>
-          <Col>
+          <Col className='sm'>
             <img src={searchResult.image} alt={searchResult.name} />
           </Col>
-          <Col>
+          <Col className='sm'>
             <Link href={`/contacts/${searchResult.uniqueId}`}>
-              <Col>{searchResult.name}</Col>
+              <Col className='sm'>{searchResult.name}</Col>
             </Link>
           </Col>
-          <Col>{searchResult.email}</Col>
-          <Col>{searchResult.phoneNumber}</Col>
+          <Col className='sm'>{searchResult.email}</Col>
+          <Col className='sm'>{searchResult.phoneNumber}</Col>
+          <Col className='sm'>Edit</Col> {/* Implement editing function */}
         </Row>
           )}
         </Container>
 
         <Container>
-          <Link href="/contacts">All Contacts</Link>
+          <Contact />
         </Container>
     </>
   )

@@ -22,13 +22,13 @@ export default function ContactInfo() {
       <Container>
         <h1>Contact Info</h1>
         <div>
-          <Link href="/contacts">Back</Link>
+          <Link href="/">Back</Link>
           </div>
         <h2>
           {contact.name}
         </h2>
         <div className="contact-info">
-          <img src={contact.image} alt="`${contact.name}'s profile picture.`" />
+          <img src={contact.image} alt={`${contact.name}'s profile picture.`} />
         </div>
           <div>
           {contact.email}

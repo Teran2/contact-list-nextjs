@@ -3,7 +3,6 @@ import Button from "react-bootstrap/Button";
 import { ContactAPI } from "@/app/data/contactsAPI";
 import Container from "react-bootstrap/Container";
 import Link from "next/link";
-import PropTypes from "prop-types";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
@@ -24,7 +23,7 @@ export default function AddNewContact() {
     if (!name || !email || !image || !phoneNumber) {
       alert('Please fill out all fields!');
       return ;
-    } // Implement phoneNumber type validation.
+    }
 
     const uniqueId = generateUniqueId();
 
@@ -33,10 +32,10 @@ export default function AddNewContact() {
         name,
         email,
         image,
-        phoneNumber: parseInt(phoneNumber, 10),
+        phoneNumber,
         uniqueId
       });
-      router.push("/contacts")
+      router.push("/")
     } catch (error) {
       console.error("Problem adding new contact: ", error);
       alert("There was an error. Please try again.");
@@ -72,6 +71,7 @@ export default function AddNewContact() {
         <input
         type="text"
         className="form-control"
+        placeholder="* Optional *"
         onChange={(event) =>
           setImage(event.target.value || defaultImage)
         }
@@ -84,7 +84,7 @@ export default function AddNewContact() {
         type="text"
         className="form-control"
         onChange={(event) =>
-          setPhoneNumber(parseInt(event.target.value, 10))
+          setPhoneNumber(event.target.value)
         }
         />
 
@@ -101,13 +101,3 @@ export default function AddNewContact() {
     </Container>
   );
 }
-
-AddNewContact.propTypes = {
-  addContact: PropTypes.shape({
-    name: PropTypes.string,
-    email: PropTypes.string,
-    image: PropTypes.string,
-    phoneNumber: PropTypes.number,
-    uniqueId: PropTypes.number.isRequired,
-  }),
-};

@@ -5,7 +5,8 @@ To get started:
 - Clone the Repo
 - Open on vscode
 - Open terminal within vscode
-- Type and enter ' npm i '
+- Type and enter ' npm i ', then ' npm run dev '
+- Open up ' http://localhost:3000/ ' in your browser
 
 Troubleshooting vscode terminal:
 
